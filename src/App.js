@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { JSON_API } from './utils/Constants';
 import './App.css';
 import Header from './coponents/Header';
 import SideBar from './coponents/SideBar';
@@ -17,7 +18,7 @@ function App() {
   const [orders, setOrders] = useState([]);
 
   const getDashboardStats = async () => {
-    axios.get('http://localhost:3001/dashboard_stats')
+    axios.get(`${JSON_API}/dashboard_stat`)
       .then(function (response) {
         setDashboardStats(response.data[0])
       })
@@ -27,7 +28,7 @@ function App() {
   };
 
   const getCompanyInfo = async () => {
-    axios.get('http://localhost:3001/company_info')
+    axios.get(`${JSON_API}/company_info`)
       .then(function (response) {
         setCompanyInfo(response.data[0])
       })
@@ -38,7 +39,7 @@ function App() {
   };
 
   const getRoundInfo = async () => {
-    axios.get('http://localhost:3001/round_info')
+    axios.get(`${JSON_API}/round_info`)
       .then(function (response) {
         setRoundInfo(response.data[0])
       })
@@ -49,7 +50,7 @@ function App() {
   };
 
   const getAllocationInfo = async () => {
-    axios.get('http://localhost:3001/allocation_info')
+    axios.get(`${JSON_API}/allocation_info`)
       .then(function (response) {
         setAllocationInfo(response.data[0])
       })
@@ -60,7 +61,7 @@ function App() {
   };
 
   const getInvestorsData = async () => {
-    axios.get('http://localhost:3001/investors')
+    axios.get(`${JSON_API}/investors`)
       .then(function (response) {
 
         setInvestors(response.data)
@@ -72,7 +73,7 @@ function App() {
   };
 
   const getOrdersData = async () => {
-    axios.get('http://localhost:3001/orders')
+    axios.get(`${JSON_API}/orders`)
       .then(function (response) {
 
         setOrders(response.data)
