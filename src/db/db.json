@@ -1,0 +1,164 @@
+{
+    "company_info": [{
+        "id": 1,
+        "name": "Monsoon Creditech",
+        "round": "SERIES I",
+        "instrument_type": "PRIMARY",
+        "transaction_type": "FINTECH",
+        "category": "FINTECH"
+    }],
+    "round_info": [{
+        "id": 1,
+        "date": "04/03/2022",
+        "total_investors": "98",
+        "allocation": "$300,000",
+        "minimum_investment": "$50,000",
+        "transaction_type": "$50,000",
+        "end_date": "06/12/2022"
+    }],
+    "allocation_info": [{
+        "id": 1,
+        "total_allocation": "$300,000",
+        "tot_subscribed": "$270,000",
+        "tot_paid": "$120,000",
+        "remaning": "$180,000",
+        "total_subscribed": "56",
+        "total_paid": "34",
+        "remanings": "47",
+        "completed": "34",
+        "in_process": "47"
+    }],
+    "investors": [{
+        "id": 1,
+        "name": "Mark Cubett",
+        "email": "mark@email.com",
+        "phone": "+1 3747491046",
+        "status": "false"
+    },
+    {
+        "id": 2,
+        "name": "John Deep",
+        "email": "JD@email.com",
+        "phone": "+1 3747764046",
+        "status": "true"
+    },
+    {
+        "id": 3,
+        "name": "Deric Boseman",
+        "email": "Deric@email.com",
+        "phone": "+1 374746046",
+        "status": "true"
+    },
+    {
+        "id": 4,
+        "name": "Capario Muler",
+        "email": "cap@email.com",
+        "phone": "+1 3747474046",
+        "status": "true"
+    },
+    {
+        "id": 5,
+        "name": "Ikaris Kiijs",
+        "email": "ik@email.com",
+        "phone": "+1 3747494061",
+        "status": "true"
+    },
+    {
+        "id": 6,
+        "name": "Dinesh Kubser",
+        "email": "din@email.com",
+        "phone": "+1 3747494086",
+        "status": "false"
+    },
+    {
+        "id": 7,
+        "name": "Asif Altaff",
+        "email": "asif@email.com",
+        "phone": "+1 3747494047",
+        "status": "false"
+    }
+],
+"orders": [{
+    "id": 1,
+    "name": "Mark Cubett",
+    "amount": "$20,000",
+    "round": "Series ||",
+    "status": "2"
+},
+{
+    "id": 2,
+    "name": "John Deep",
+    "amount": "$10,000",
+    "round": "Series |",
+    "status": "1"
+},
+{
+    "id": 3,
+    "name": "Deric Boseman",
+    "amount": "$5,000",
+    "round": "Series |",
+    "status": "1"
+},
+{
+    "id": 4,
+    "name": "Capario Muler",
+    "amount": "15,000",
+    "round": "Series |",
+    "status": "1"
+},
+{
+    "id": 5,
+    "name": "Ikaris Kiijs",
+    "amount": "9,000",
+    "round": "Series |",
+    "status": "1"
+},
+{
+    "id": 6,
+    "name": "Dinesh Kubser",
+    "amount": "$12,000",
+    "round": "Series |",
+    "status": "1"
+},
+{
+    "id": 7,
+    "name": "Asif Altaff",
+    "amount": "$22,000",
+    "round": "Series |",
+    "status": "3"
+},
+{
+    "id": 8,
+    "name": "Ikaris Kiijs",
+    "amount": "15,000",
+    "round": "Series |",
+    "status": "4"
+},
+{
+    "id": 9,
+    "name": "Dinesh Kubser",
+    "amount": "$9,000",
+    "round": "Series |",
+    "status": "1"
+},
+{
+    "id": 10,
+    "name": "Asif Altaff",
+    "amount": "$12,000",
+    "round": "Series |",
+    "status": "2"
+}
+],
+    "profile": {
+        "name": "John Mathew"
+    },
+    "dashboard_stats": [
+        {
+            "raised": "$350k",
+            "rounds": "7",
+            "tot_investors": "182",
+            "tot_companies": "4"
+        }
+    ]
+    
+}

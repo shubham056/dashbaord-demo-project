@@ -1,24 +1,123 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import './App.css';
+import Header from './coponents/Header';
+import SideBar from './coponents/SideBar';
+import TopBarSection from './coponents/TopBarSection';
+import Content from './coponents/Content';
+
 
 function App() {
+
+  const [dashboardStats, setDashboardStats] = useState([]);
+  const [companyInfo, setCompanyInfo] = useState([]);
+  const [roundInfo, setRoundInfo] = useState([]);
+  const [allocationInfo, setAllocationInfo] = useState([]);
+  const [investors, setInvestors] = useState([]);
+  const [orders, setOrders] = useState([]);
+
+  const getDashboardStats = async () => {
+    axios.get('http://localhost:3001/dashboard_stats')
+      .then(function (response) {
+        setDashboardStats(response.data[0])
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+  };
+
+  const getCompanyInfo = async () => {
+    axios.get('http://localhost:3001/company_info')
+      .then(function (response) {
+        setCompanyInfo(response.data[0])
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+  };
+
+  const getRoundInfo = async () => {
+    axios.get('http://localhost:3001/round_info')
+      .then(function (response) {
+        setRoundInfo(response.data[0])
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+  };
+
+  const getAllocationInfo = async () => {
+    axios.get('http://localhost:3001/allocation_info')
+      .then(function (response) {
+        setAllocationInfo(response.data[0])
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+  };
+
+  const getInvestorsData = async () => {
+    axios.get('http://localhost:3001/investors')
+      .then(function (response) {
+
+        setInvestors(response.data)
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+  };
+
+  const getOrdersData = async () => {
+    axios.get('http://localhost:3001/orders')
+      .then(function (response) {
+
+        setOrders(response.data)
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+  };
+
+
+  useEffect(() => {
+    getDashboardStats();
+    getCompanyInfo();
+    getRoundInfo();
+    getAllocationInfo();
+    getInvestorsData();
+    getOrdersData();
+  }, [])
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+
+      <SideBar />
+
+      <div className='main'>
+
+        <TopBarSection
+          dashboardStats={dashboardStats}
+        />
+
+        <Content
+          companyInfo={companyInfo}
+          roundInfo={roundInfo}
+          allocationInfo={allocationInfo}
+          investors={investors}
+          orders={orders}
+        />
+
+      </div>
+
+    </>
+
   );
 }
 
