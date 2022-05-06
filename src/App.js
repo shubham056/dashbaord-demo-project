@@ -18,7 +18,7 @@ function App() {
   const [orders, setOrders] = useState([]);
 
   const getDashboardStats = async () => {
-    axios.get(`${JSON_API}/dashboard_stat`)
+    axios.get(`${JSON_API}/dashboard_stats`)
       .then(function (response) {
         setDashboardStats(response.data[0])
       })
