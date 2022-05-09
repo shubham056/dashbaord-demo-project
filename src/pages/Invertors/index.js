@@ -5,6 +5,7 @@ import AddInvestors from '../../components/Investors/AddInvestors';
 import InviteInvestors from '../../components/Investors/InviteInvestors';
 import Layout from '../../components/Layout';
 import { JSON_API } from '../../utils/Constants';
+import { Helmet } from "react-helmet";
 
 export default function Investors() {
 
@@ -29,7 +30,11 @@ export default function Investors() {
 
   return (
     <>
-
+      <Helmet>
+        <title>Investors |Founder</title>
+        <meta name="description" content="Investors" />
+      </Helmet>
+      
       <Layout
         pageHeading={"Investors"}
       />

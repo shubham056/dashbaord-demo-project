@@ -4,6 +4,7 @@ import Layout from '../../components/Layout';
 import TopBarSection from '../../components/TopBarSection';
 import Content from '../../components/Content';
 import { JSON_API } from '../../utils/Constants';
+import { Helmet } from "react-helmet";
 
 
 export default function Dashboard() {
@@ -95,6 +96,10 @@ export default function Dashboard() {
 
     return (
         <>
+            <Helmet>
+                <title>Dashboard |Founder</title>
+                <meta name="description" content="Dashboard" />
+            </Helmet>
             <Layout
                 pageHeading={'Dashboard'}
             />
