@@ -56,6 +56,7 @@ table{width: 100%;}
   letter-spacing: 0px;
   line-height: 1.2;
   padding:25px 0 33px 0;
+  text-align: center;
 }
 .userimg ul{
   display:flex;  
@@ -246,6 +247,29 @@ table{width: 100%;}
   font-size: 14px;
 }
 
+/*Investors*/
+
+.card label {
+  white-space: pre;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "DM Sans", sans-serif;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.topsec .tablearea2 th,.topsec .tablearea2 td{
+  border:none; padding: 9px 10px;
+  font-size: 12px;
+}
+.topsec .tablearea2 td:nth-child(1){display: flex; justify-content: space-between;}
+.topsec .tablearea2 td:nth-child(2){font-size: 16px;}
+.topsec .form-group label{font-size: 18px;}
+.topsec .form-group{margin: 0;}
+.topsec .form-group input,.topsec .form-group select{background-color:rgb(235, 235, 235);}
+.form-group.text-right{margin-top: 20px;}
+.topsec .col-xl-9 .card{height: 100%;}
 
 @media only screen  and (max-width: 767px){
   .sidenav{display: none;}

@@ -1,13 +1,13 @@
 import React from 'react';
 
-export default function Investors({ investors }) {
+export default function DashboardInvestortable({ investors }) {
 
 
   let investorsJsx;
   if (typeof investors != "undefined" && investors !== null && investors.length > 0) {
     investorsJsx = investors.map(item => (
       <tr>
-        <td>1</td>
+        <td>{item.id}</td>
         <td>{item.name}</td>
         <td>{item.email}</td>
         <td>{item.phone}</td>

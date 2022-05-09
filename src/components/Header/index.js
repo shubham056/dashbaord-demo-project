@@ -1,13 +1,13 @@
 import React from 'react'
 
-export default function Header() {
+export default function Header({ heading }) {
   return (
     <header className="tophdr">
       <div className="container">
         <div className="row">
           <div className="col-md-6">
             <div className="pagetitle">
-              <h2>Dashboard</h2>
+              <h2>{(heading !== undefined)? heading : null}</h2>
             </div>
           </div>
           <div className="col-md-6">

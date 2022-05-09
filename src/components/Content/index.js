@@ -1,7 +1,7 @@
 import React from 'react'
 import AllocationInfo from '../AllocationInfo'
 import CompanyInfo from '../CompanyInfo'
-import Investors from '../Investors'
+import Investors from '../Investors/DashboardInvestortable'
 import Orders from '../Orders'
 import RoundInfo from '../RoundInfo'
 
