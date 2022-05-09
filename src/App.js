@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import Dashboard from './pages/Dashboard';
 import Investors from './pages/Invertors';
+import Opportunities from './pages/Opportunities';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="investors" element={<Investors />} />
+          <Route path="opportunities" element={<Opportunities />} />
         </Routes>
       </BrowserRouter>
     </>

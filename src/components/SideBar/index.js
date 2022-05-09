@@ -10,7 +10,7 @@ export default function SideBar() {
       <ul>
         <li className="activemenu"><Link to="/">Dashboard</Link></li>
         <li><Link to="/investors">Investors</Link></li>
-        <li><Link to="/">Opportunities</Link></li>
+        <li><Link to="/opportunities">Opportunities</Link></li>
         <li><Link to="/">Orders</Link></li>
         <li><Link to="/">Profile</Link></li>
       </ul>

@@ -5,31 +5,10 @@ export default function Opportunities() {
   return (
     <>
    <Layout
-                pageHeading={'Dashboard'}
-            />
+        pageHeading={'Opportunities'}
+    />
   {/* Main Content Area */}
   <div className="main">
-    {/*  Header */}
-    <header className="tophdr">
-      <div className="container">
-        <div className="row">
-          <div className="col-md-6">
-            <div className="pagetitle">
-              <h2>Investors</h2>
-              {/* <p>Investors/List</p> */}
-            </div>
-          </div>
-          <div className="col-md-6">
-            <div className="userimg text-right">
-              <ul>
-                <li className="frame1" />
-                <li className="frame"><a href="javascript:void(0);"><span className="round" /> John Mathew</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>  
     <section className="topsec">
       <div className="container">
         <div className="row">
@@ -169,7 +148,7 @@ export default function Opportunities() {
       </div>
     </section>
   </div>
-</div>
+
 
     </>
   )
