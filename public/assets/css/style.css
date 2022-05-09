@@ -56,7 +56,6 @@ table{width: 100%;}
   letter-spacing: 0px;
   line-height: 1.2;
   padding:25px 0 33px 0;
-  text-align: center;
 }
 .userimg ul{
   display:flex;  
@@ -261,7 +260,7 @@ table{width: 100%;}
 }
 .topsec .tablearea2 th,.topsec .tablearea2 td{
   border:none; padding: 9px 10px;
-  font-size: 12px;
+  font-size: 10px;
 }
 .topsec .tablearea2 td:nth-child(1){display: flex; justify-content: space-between;}
 .topsec .tablearea2 td:nth-child(2){font-size: 16px;}
@@ -280,4 +279,72 @@ table{width: 100%;}
   .contentborder{margin-bottom: 15px;}
   .actbnt,.progbnt{font-size: 8px;}
   .mobview{margin-top: 20px;}
+}
+.tablearea2 td span {
+  font-size: 9px;
+  display: block;
+}
+.tablearea2 td label.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 32px;
+  line-height: inherit;
+  white-space: inherit;
+  letter-spacing: inherit;
+}
+
+.tablearea2 td label.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.tablearea2 td span.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  width: 60px;
+  height: 32px;
+}
+
+.tablearea2 td span.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.tablearea2 td label input:checked + .slider {
+  background-color: #2196F3;
+}
+
+.tablearea2 td label input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+.tablearea2 td label input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.tablearea2 td span.slider.round {
+  border-radius: 34px;
+}
+
+.tablearea2 td span.slider.round:before {
+  border-radius: 50%;
 }
