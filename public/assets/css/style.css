@@ -5,11 +5,11 @@ ul li{list-style: none;}
 body{font-family: 'DM Sans', sans-serif; background-color: #f2f2f2;}
 .sidebar ul{padding-top: 60px;}
 .sidebar ul li{
-  padding: 10px 0 10px 25px;
+ 
 }
 table{width: 100%;}
 .container{max-width: 100%;}
-.sidebar ul li a{
+.sidebar ul li a {
   white-space: pre;
   font-weight: 400;
   font-style: normal;
@@ -17,12 +17,14 @@ table{width: 100%;}
   color: #000000;
   font-size: 22px;
   letter-spacing: 0px;
-  line-height: 1.2;  
+  line-height: 1.2;
+  padding: 10px 0 10px 25px;
+  display: block;
 }
 .activemenu{
   position: relative;
 }
-.activemenu::before{
+a.activemenu::before{
   content: '';
   background-color: #44ccff;
   width: 5px; height: 100%;
@@ -47,6 +49,9 @@ table{width: 100%;}
   font-size: 28px;
   padding-bottom: 50px;
 }
+.pagetitle {
+  margin-bottom: 33px;
+}
 .pagetitle h2{
   font-weight: 400;
   font-style: normal;
@@ -55,9 +60,23 @@ table{width: 100%;}
   font-size: 39px;
   letter-spacing: 0px;
   line-height: 1.2;
-  padding:25px 0 33px 0;
+  padding:25px 0 0px 0;
   text-align: center;
 }
+.pagetitle p {
+
+  white-space: pre;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "DM Sans", sans-serif;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+
+.pagetitle p span {  color: #0099ff;}
+
 .userimg ul{
   display:flex;  
    margin-top: 25px;
@@ -349,3 +368,279 @@ table{width: 100%;}
 .tablearea2 td span.slider.round:before {
   border-radius: 50%;
 }
+
+.comname {
+  box-sizing: border-box;
+  width: 79px;
+  height: 27px;
+  background-color: #ffffff;
+  overflow: visible;
+  border-radius: 4px;
+  border: 1px solid rgba(34, 34, 34, 0.13); padding: 0 0 0 5px;}
+
+.short_text {
+  
+  font-weight: 400;
+  font-style: normal;
+  font-family: "DM Sans", sans-serif;
+  color: #000000;
+  font-size: 12px;
+  
+  line-height: 1.5;
+  display: block;
+} 
+
+.right_bar select {}
+
+.comboxright {
+  box-sizing: border-box;
+  width: auto;
+  height: 73px;
+  background-color: #ffffff;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid rgba(34, 34, 34, 0.13);
+  padding: 10px;
+  margin-top: 20px;
+  position: relative;
+
+}
+.comboxright h3 {
+  font-weight: 400;
+  font-style: normal;
+  font-family: "DM Sans", sans-serif;
+  color: #000000;
+  font-size: 19px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+  margin-bottom: -4px;
+}
+
+.comboxright span {
+
+  height: 19px;
+  background-color: #e0e0e0;
+  overflow: visible;
+  border-radius: 4px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "DM Sans", sans-serif;
+  color: #000000;
+  font-size: 11px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.view_point {
+  font-weight: 400;
+  font-style: normal;
+  font-family: "DM Sans", sans-serif;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+  position: absolute;
+  top: 31px;
+  right: 5px;
+}
+.view_point a  {font-family: "DM Sans", sans-serif;
+  color: #000000;
+  font-size: 12px;}
+
+
+
+.head_section h2 {
+
+  font-weight: 400;
+  font-style: normal;
+  font-family: "DM Sans", sans-serif;
+  color: #000000;
+  font-size: 35px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+
+.head_section p {
+
+  font-weight: 400;
+  font-style: normal;
+  font-family: "DM Sans", sans-serif;
+  color: #0099ff;
+  font-size: 21px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+
+.form_add label {
+
+  font-weight: 400;
+  font-style: normal;
+  font-family: "DM Sans", sans-serif;
+  color: #000000;
+  font-size: 21px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.form_add input {
+  background-color: rgb(235, 235, 235);
+}
+
+.form_add select {
+  background-color: rgb(235, 235, 235);
+}
+.form_add div.form-check {
+  font-size: 14px;
+}
+
+.opportunity_form {
+  width: 70%;
+}
+
+.investors_other {
+  padding: 20px 0 0 15px;
+  width: 100%;
+}
+
+.head_section.inves_head h6 {
+  margin-top: 20px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "DM Sans", sans-serif;
+  color: #000000;
+  font-size: 21px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+
+.head_section.inves_head span { font-weight: 400; display: block;
+  font-style: normal;
+  font-family: "DM Sans", sans-serif;
+  color: #000000;
+  font-size: 11px;
+  letter-spacing: 0px;
+  line-height: 1.2;}
+
+
+.investors_other .form-check {
+  margin-top: 57px;
+   font-weight: 400;
+  font-style: normal;
+  font-family: "DM Sans", sans-serif;
+  color: #000000;
+  font-size: 21px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+
+.button_add {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.button_add button {
+  background-color: rgb(178, 182, 184);
+  border: none;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+}
+
+.button_add button:hover {background-color: rgb(0, 119, 255); color: rgb(255, 255, 255);}
+
+.upload-btn-wrapper {
+  position: relative;
+ 
+
+}
+
+.btn {
+ width: 224px;
+  height: 60px;
+   box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.25);
+  background-color: #ffffff;
+  overflow: visible;
+  border-radius: 8px;
+}
+
+.upload-btn-wrapper input[type="file"] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  width: 224px;
+  height: 60px;
+  box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.25);
+}
+
+
+.format_file {
+  position: absolute;
+  top: 0;
+  left: 240px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "DM Sans", sans-serif;
+  color: #6f6d6d;
+  font-size: 21px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+
+.create_button {background-color:rgb(0, 153, 255);color:rgb(255, 255, 255); border-radius: 8px; padding: 10px; border:none; }
+.form_add.or_Bx label {
+  margin-top: 50px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "DM Sans", sans-serif;
+  color: #000000;
+  font-size: 21px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+
+.create_button {
+  background-color: rgb(0, 153, 255);
+  color: rgb(255, 255, 255);
+  border-radius: 8px;
+  padding: 10px;
+  border: none;
+  height: 40px;
+  font-size: 16px;
+  margin-top: 42px;
+  line-height: 10px;
+}
+
+.down_button {width: 100%; text-align: right;}
+.down_button button {background-color: rgb(0, 153, 255);
+  color: rgb(255, 255, 255);
+  border-radius: 8px;
+  padding: 10px;
+  border: none;
+  height: 40px;
+  font-size: 16px;
+  
+  line-height: 10px;}
+
+  .down_button button.cancel {background-color: rgb(240, 240, 240); color:rgb(170, 170, 170);}
+
+  .memo_box { box-sizing: border-box;
+  width: 100%;
+  height: 342px;
+  background-color: #ffffff;
+  overflow: visible;
+  border-radius: 8px;
+  border: 1px solid rgba(34, 34, 34, 0.13);}
+
+
+
+ .memo_box input{ width: 100%;
+  border:none;
+  height: 60px;
+  box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.25);
+  background-color: #ffffff;
+  overflow: visible;
+  border-radius: 8px;}
