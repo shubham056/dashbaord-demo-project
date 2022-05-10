@@ -2,7 +2,6 @@ import React from 'react';
 
 export default function Investors({ investors }) {
 
-
   let investorsJsx;
   if (typeof investors != "undefined" && investors !== null && investors.length > 0) {
     investorsJsx = investors.map(item => (

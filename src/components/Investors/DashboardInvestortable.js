@@ -11,7 +11,7 @@ export default function DashboardInvestortable({ investors }) {
         <td>{item.name}</td>
         <td>{item.email}</td>
         <td>{item.phone}</td>
-        <td><img src={( item.status === "true" ) ? "assets/images/active.png" : "assets/images/pendding.png"} alt="img" /> Pending</td>
+        <td><img src={( item.status === "true" ) ? "assets/images/active.png" : "assets/images/pendding.png"} alt="img" /> {(item.status === "true") ? "Active" : "Pending"}</td>
       </tr>
     ))
   } else {

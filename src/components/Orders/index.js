@@ -11,7 +11,7 @@ export default function Orders({ orders }) {
         <td>{item.name}</td>
         <td>{item.amount}</td>
         <td>{item.round}</td>
-        <td><img src={(item.status === "1") ? "assets/images/active.png" : "assets/images/pendding.png"} alt="img" /> Pending</td>
+        <td><img src={(item.status === "1") ? "assets/images/active.png" : "assets/images/pendding.png"} alt="img" /> {(item.status === "1") ? "Active" : "Pending"}</td>
       </tr>
     ))
   } else {

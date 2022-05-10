@@ -1,8 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Layout from '../../components/Layout';
+import { JSON_API } from '../../utils/Constants';
 import { Helmet } from "react-helmet";
+import OpportunitiesTable from '../../components/Opportunities';
 
 export default function Opportunities() {
+
+    const [opportunitiesData, setOpportunitiesData] = useState([]);
+
+    const getOpportunitiesData = async () => {
+        axios.get(`${JSON_API}/opportunities_data`)
+            .then(function (response) {
+                setOpportunitiesData(response.data)
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
+    };
+
+    useEffect(() => {
+        getOpportunitiesData();
+    }, [opportunitiesData])
+
     return (
         <>
             <Helmet>
@@ -19,88 +40,7 @@ export default function Opportunities() {
                     <div className="container">
                         <div className="row">
                             <div className="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 pr-2">
-                                <div className="card">
-                                    <div className="card-body">
-                                        <div className="table-responsive tablearea2">
-                                            <table className="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th>S.No</th>
-                                                        <th>Company Name</th>
-                                                        <th>Round Name</th>
-                                                        <th>Round Size</th>
-                                                        <th>Total Investments</th>
-                                                        <th>Total Paid</th>
-                                                        <th>Closing Date</th>
-                                                        <th>Status</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>Monsoon Creditech <span>PINTECH SEED</span></td>
-                                                        <td>Series| <span>PRIMARY</span></td>
-                                                        <td>$300K</td>
-                                                        <td>45 </td>
-                                                        <td>12</td>
-                                                        <td>04/02/2022 </td>
-                                                        <td>
-                                                            <label className="switch">
-                                                                <input type="checkbox" defaultChecked />
-                                                                <span className="slider round" />
-                                                            </label>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2</td>
-                                                        <td>My Jar App <span>PINTECH PRE-SEED</span></td>
-                                                        <td>Series| <span>SECONDARY</span></td>
-                                                        <td>$100K</td>
-                                                        <td>36 </td>
-                                                        <td>23</td>
-                                                        <td>01/12/2022 </td>
-                                                        <td>
-                                                            <label className="switch">
-                                                                <input type="checkbox" defaultChecked />
-                                                                <span className="slider round" />
-                                                            </label>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>3</td>
-                                                        <td>Monsoon Creditech <span>PINTECH SERIES-A</span></td>
-                                                        <td>Series| <span>PRIMARY</span></td>
-                                                        <td>$1M</td>
-                                                        <td>99 </td>
-                                                        <td>56</td>
-                                                        <td>09/24/2022 </td>
-                                                        <td>
-                                                            <label className="switch">
-                                                                <input type="checkbox" defaultChecked />
-                                                                <span className="slider round" />
-                                                            </label>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>4</td>
-                                                        <td>Monsoon Creditech <span>PINTECH SERIES-B</span></td>
-                                                        <td>Series| <span>SECONDARY</span></td>
-                                                        <td>$450K</td>
-                                                        <td>45 </td>
-                                                        <td>12</td>
-                                                        <td>04/02/2022 </td>
-                                                        <td>
-                                                            <label className="switch">
-                                                                <input type="checkbox" defaultChecked />
-                                                                <span className="slider round" />
-                                                            </label>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
+                                <OpportunitiesTable opportunities={opportunitiesData} />
                             </div>
                             <div className="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 pl-2">
                                 <div className="card">
