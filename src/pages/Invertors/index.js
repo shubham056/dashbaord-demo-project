@@ -3,22 +3,26 @@ import axios from 'axios';
 import InvestorsTable from '../../components/Investors';
 import AddInvestors from '../../components/Investors/AddInvestors';
 import InviteInvestors from '../../components/Investors/InviteInvestors';
-import Layout from '../../components/Layout';
 import { JSON_API } from '../../utils/Constants';
 import { Helmet } from "react-helmet";
+import SideBar from '../../components/SideBar';
+import Header from '../../components/Header';
 
 export default function Investors() {
-
+  const [isLoading, setisLoading] = useState(true);
+  const [isError, setisError] = useState(false);
   const [investors, setInvestors] = useState([]);
 
   const getInvestorsData = async () => {
     axios.get(`${JSON_API}/investors`)
       .then(function (response) {
-
-        setInvestors(response.data)
+        setTimeout(() => {
+          setisLoading(false)
+          setInvestors(response.data)
+        }, 1000);
       })
       .catch(function (error) {
-        // handle error
+        setisError(true)
         console.log(error);
       })
   };
@@ -34,18 +38,25 @@ export default function Investors() {
         <title>Investors |Founder</title>
         <meta name="description" content="Investors" />
       </Helmet>
-      
-      <Layout
-        pageHeading={"Investors"}
-      />
+
+      <SideBar />
 
       <div className="main">
+
+        <Header
+          heading="Investors"
+          isBreadcrumb={true}
+          linkText="Add Investors"
+          link="investor" />
+
         <section className="topsec">
           <div className="container">
             <div className="row">
               <div className="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 pr-2">
 
                 <InvestorsTable
+                  isError={isError}
+                  isLoading={isLoading}
                   investors={investors}
                 />
 

@@ -1,26 +1,39 @@
 import React from 'react';
+import Skeleton from 'react-loading-skeleton';
 
-export default function Orders({ orders }) {
-
+export default function Orders({ isError, isLoading, orders }) {
 
   let ordersJsx;
-  if (typeof orders != "undefined" && orders !== null && orders.length > 0) {
-    ordersJsx = orders.map(item => (
+  if (isLoading) {
+    ordersJsx = Array(5).fill(0).map(item => (
       <tr>
-        <td>1</td>
-        <td>{item.name}</td>
-        <td>{item.amount}</td>
-        <td>{item.round}</td>
-        <td><img src={(item.status === "1") ? "assets/images/active.png" : "assets/images/pendding.png"} alt="img" /> {(item.status === "1") ? "Active" : "Pending"}</td>
+        <td style={{ display: 'block' }}><Skeleton /></td>
+        <td><Skeleton /></td>
+        <td><Skeleton /></td>
+        <td><Skeleton /></td>
+        <td><Skeleton /></td>
       </tr>
     ))
   } else {
-    ordersJsx = (
-      <tr>
-        <td>No investors found</td>
-      </tr>
-    )
+    if (typeof orders != "undefined" && orders !== null && orders.length > 0) {
+      ordersJsx = orders.map(item => (
+        <tr>
+          <td>{item.id}</td>
+          <td>{item.name}</td>
+          <td>{item.amount}</td>
+          <td>{item.round}</td>
+          <td><img src={(item.status === "1") ? "assets/images/active.png" : "assets/images/pendding.png"} alt="img" /> {(item.status === "1") ? "Active" : "Pending"}</td>
+        </tr>
+      ))
+    } else {
+      ordersJsx = (
+        <tr>
+          <td>No investors found</td>
+        </tr>
+      )
+    }
   }
+
 
   return (
     <div className="card mt-2">

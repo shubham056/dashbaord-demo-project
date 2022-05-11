@@ -1,28 +1,42 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Layout from '../../components/Layout';
 import TopBarSection from '../../components/TopBarSection';
 import Content from '../../components/Content';
 import { JSON_API } from '../../utils/Constants';
 import { Helmet } from "react-helmet";
+import SideBar from '../../components/SideBar';
+import Header from '../../components/Header';
 
 
 export default function Dashboard() {
-
+    const [isdashboardStatsLoading, setisdashboardStatsLoading] = useState(true);
+    const [isdashboardStatsError, setisdashboardStatsError] = useState(false);
     const [dashboardStats, setDashboardStats] = useState([]);
+
     const [companyInfo, setCompanyInfo] = useState([]);
     const [roundInfo, setRoundInfo] = useState([]);
+
+    const [isAllocationInfoLoading, setIsAllocationInfoLoading] = useState(true);
+    const [isAllocationInfoError, setIsAllocationInfoError] = useState(false);
     const [allocationInfo, setAllocationInfo] = useState([]);
+
+    const [isInvestorsLoading, setIsInvestorsLoading] = useState(true);
+    const [isInvestorsError, setIsInvestorsError] = useState(false);
     const [investors, setInvestors] = useState([]);
+
+    const [isOdersLoading, setIsOdersLoading] = useState(true);
+    const [isOdersError, setIsOdersError] = useState(false);
     const [orders, setOrders] = useState([]);
 
     const getDashboardStats = async () => {
 
         axios.get(`${JSON_API}/dashboard_stats`)
             .then(function (response) {
+                setisdashboardStatsLoading(false)
                 setDashboardStats(response.data[0])
             })
             .catch(function (error) {
+                setisdashboardStatsError(true)
                 console.log(error);
             })
     };
@@ -52,10 +66,11 @@ export default function Dashboard() {
     const getAllocationInfo = async () => {
         axios.get(`${JSON_API}/allocation_info`)
             .then(function (response) {
-                setAllocationInfo(response.data[0])
+                setAllocationInfo(response.data[0]);
+                setIsAllocationInfoLoading(false)
             })
             .catch(function (error) {
-                // handle error
+                setIsAllocationInfoError(true)
                 console.log(error);
             })
     };
@@ -63,11 +78,11 @@ export default function Dashboard() {
     const getInvestorsData = async () => {
         axios.get(`${JSON_API}/investors`)
             .then(function (response) {
-
                 setInvestors(response.data)
+                setIsInvestorsLoading(false)
             })
             .catch(function (error) {
-                // handle error
+                setIsInvestorsError(true)
                 console.log(error);
             })
     };
@@ -75,11 +90,11 @@ export default function Dashboard() {
     const getOrdersData = async () => {
         axios.get(`${JSON_API}/orders`)
             .then(function (response) {
-
                 setOrders(response.data)
+                setIsOdersLoading(false)
             })
             .catch(function (error) {
-                // handle error
+                setIsOdersError(true)
                 console.log(error);
             })
     };
@@ -100,13 +115,17 @@ export default function Dashboard() {
                 <title>Dashboard |Founder</title>
                 <meta name="description" content="Dashboard" />
             </Helmet>
-            <Layout
-                pageHeading={'Dashboard'}
-            />
+
+
+            <SideBar />
 
             <div className='main'>
 
+                <Header heading={"Dashboard"} />
+
                 <TopBarSection
+                    isError={isdashboardStatsError}
+                    isLoading={isdashboardStatsLoading}
                     dashboardStats={dashboardStats}
                 />
 
@@ -114,8 +133,23 @@ export default function Dashboard() {
                     companyInfo={companyInfo}
                     roundInfo={roundInfo}
                     allocationInfo={allocationInfo}
-                    investors={investors}
-                    orders={orders}
+                    isInvestorsError={isInvestorsError}
+                    isInvestorsLoading={isInvestorsLoading}
+                    allocationInfoData={{
+                        isAllocationInfoError,
+                        isAllocationInfoLoading,
+                        allocationInfo
+                    }}
+                    ordersData={{
+                        isOdersError,
+                        isOdersLoading,
+                        orders
+                    }}
+                    investorsData={{
+                        isInvestorsError,
+                        isInvestorsLoading,
+                        investors
+                    }}
                 />
 
             </div>

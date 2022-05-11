@@ -1,24 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import InvestorsTable from '../../components/Investors';
 import AddInvestors from '../../components/Investors/AddInvestors';
 import InviteInvestors from '../../components/Investors/InviteInvestors';
-import Layout from '../../components/Layout';
 import { JSON_API } from '../../utils/Constants';
 import { Helmet } from "react-helmet";
 import OrdersTable from '../../components/Orders/OrdersTable';
+import SideBar from '../../components/SideBar';
+import Header from '../../components/Header';
 
 export default function Orders() {
-
+  const [isLoading, setisLoading] = useState(true);
+  const [isError, setisError] = useState(false);
   const [ordersData, setOrdersData] = useState([]);
 
   const getOrdersData = async () => {
     axios.get(`${JSON_API}/orders`)
       .then(function (response) {
-        setOrdersData(response.data)
+        setTimeout(() => {
+          setisLoading(false)
+          setOrdersData(response.data)
+        }, 1000);
       })
       .catch(function (error) {
-        // handle error
+        setisError(true)
         console.log(error);
       })
   };
@@ -34,18 +38,26 @@ export default function Orders() {
         <title>Investors |Founder</title>
         <meta name="description" content="Investors" />
       </Helmet>
-      
-      <Layout
-        pageHeading={"Orders"}
-      />
+
+      <SideBar/>
 
       <div className="main">
+
+      <Header 
+        heading="Orders"
+        isBreadcrumb={true}
+        linkText="List"
+        link="orders"
+      />
+
         <section className="topsec">
           <div className="container">
             <div className="row">
               <div className="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 pr-2">
 
                 <OrdersTable
+                  isError={isError}
+                  isLoading={isLoading}
                   orders={ordersData}
                 />
 

@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default function Header({ heading }) {
+export default function Header({ isBreadcrumb, linkText, link, heading }) {
   return (
     <header className="tophdr">
       <div className="container">
@@ -8,6 +9,13 @@ export default function Header({ heading }) {
           <div className="col-md-6">
             <div className="pagetitle">
               <h2>{(heading !== undefined)? heading : null}</h2>
+              {
+              isBreadcrumb
+              ?
+              <p>{(heading !== undefined)? heading : null} / <Link to={`/${link}`}>{linkText}</Link></p>
+              :
+              null
+             }
             </div>
           </div>
           <div className="col-md-6">

@@ -1,6 +1,7 @@
 import React from 'react';
+import Skeleton from 'react-loading-skeleton';
 
-const TopBarSection = ({ dashboardStats }) => {
+const TopBarSection = ({ isError, isLoading, dashboardStats }) => {
     return (
         <section className="topsec">
             <div className="container">
@@ -8,25 +9,25 @@ const TopBarSection = ({ dashboardStats }) => {
                     <div className="col-md-2 pr-0">
                         <div className="framecontent text-center">
                             <p>Raised</p>
-                            <h3>{dashboardStats.raised}</h3>
+                            <h3>{dashboardStats.raised || <Skeleton height={20} width={100} /> }</h3>
                         </div>
                     </div>
                     <div className="col-md-2 pr-0">
                         <div className="framecontent text-center">
                             <p>Rounds</p>
-                            <h3>{dashboardStats.rounds}</h3>
+                            <h3>{dashboardStats.rounds || <Skeleton height={20} width={100} /> }</h3>
                         </div>
                     </div>
                     <div className="col-md-2 pr-0">
                         <div className="framecontent text-center">
                             <p>Total Investors</p>
-                            <h3>{dashboardStats.tot_investors}</h3>
+                            <h3>{dashboardStats.tot_investors || <Skeleton height={20} width={100} /> }</h3>
                         </div>
                     </div>
                     <div className="col-md-2 pr-0">
                         <div className="framecontent text-center">
                             <p>Total Companies</p>
-                            <h3>{dashboardStats.tot_companies}</h3>
+                            <h3>{dashboardStats.tot_companies || <Skeleton height={20} width={100} /> }</h3>
                         </div>
                     </div>
                     <div className="col-md-2 pr-0">

@@ -1,34 +1,25 @@
 import React from 'react';
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 
 
-export default function OpportunitiesTable({ isLoading, opportunities }) {
-    console.log(isLoading)
-    console.log("opportunities", opportunities)
+export default function OpportunitiesTable({ isError, isLoading, opportunities }) {
+
     let opportunitiesJsx;
     if (isLoading) {
-        opportunitiesJsx = opportunities.map(item => (
+        opportunitiesJsx = Array(5).fill(0).map(item => (
             <tr>
-                <td>{ isLoading ? <Skeleton /> : item.id}</td>
-                <td>{ isLoading ? <Skeleton /> : <> {item.company_name} <span>{item.company_seriies}</span> </>}  </td>
-                <td>{ isLoading ? <Skeleton /> : item.round}</td>
-                <td>{ isLoading ? <Skeleton /> : item.round_size}</td>
-                <td>{ isLoading ? <Skeleton /> : item.total_investments} </td>
-                <td>{ isLoading ? <Skeleton /> : item.total_paid}</td>
-                <td>{ isLoading ? <Skeleton /> : item.closing_date} </td>
-                <td>
-                    {
-                        isLoading ? <Skeleton /> : <label className="switch">
-                        <input type="checkbox" defaultChecked />
-                        <span className="slider round" />
-                    </label>
-                    }
-                    
-                </td>
+                <td style={{display: 'block'}}><Skeleton /></td>
+                <td><Skeleton /></td>
+                <td><Skeleton /></td>
+                <td><Skeleton /></td>
+                <td><Skeleton /></td>
+                <td><Skeleton /></td>
+                <td><Skeleton /></td>
+                <td><Skeleton /></td>
             </tr>
         ))
-        
+
     } else {
         if (typeof opportunities != "undefined" && opportunities !== null && opportunities.length > 0) {
             opportunitiesJsx = opportunities.map(item => (
@@ -55,6 +46,13 @@ export default function OpportunitiesTable({ isLoading, opportunities }) {
                 </tr>
             )
         }
+    }
+    if(isError){
+        opportunitiesJsx = (
+            <tr>
+                <td>Internal Server error</td>
+            </tr>
+        )
     }
 
 
